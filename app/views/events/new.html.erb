@@ -1,1 +1,27 @@
 events#new page
+<h1>New Event</h1>
+<p>
+  <%= link_to 'All Events', location_events_path(@location) %>
+</p>
+
+<%= form_for [@location, @event] do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :date %>
+    <%= f.text_area :date %>
+  </p>
+
+  <p>
+    <%= f.label :capacity %>
+    <%= f.text_field :capacity %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
